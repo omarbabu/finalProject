@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "862651340790",
+    "firebase_url": "https://diceroll-bb9fd.firebaseio.com",
+    "project_id": "diceroll-bb9fd",
+    "storage_bucket": "diceroll-bb9fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862651340790:android:1eab74e048f9c102a599d7",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "862651340790-tb8dmjuh8a2rsvtc01uh6v5fun98t5lh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsEouoFm-nPuNGmpCypINZp-J-9m7aCGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "862651340790-tb8dmjuh8a2rsvtc01uh6v5fun98t5lh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

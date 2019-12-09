@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Roll</string>
+    <string name="roll_dice">Roll</string>
+    <string name="sides">How Many Sides?</string>
+    <string name="taskSt">Your Task . . .</string>
+    <string name="ruleButton">Rules</string>
+    <string name="reroll">Re-Roll</string>
+    <string name="rulesTitle">Rules:</string>
+    <string name = "rulesText">
+        Each person takes turns rolling. \n \n
+        The given number is the number of minutes to complete the programming task \n \n
+        If you cannot complete the task, you are out! \n \n
+        Last person standing wins
+    </string>
+
+    <string name="close">Close</string>
+    <string name="reTry">Play Again!</string>
+
+
+
+
+
+
+</resources>

@@ -22,6 +22,7 @@ import java.util.Random;
         private View background;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

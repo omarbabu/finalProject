@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Roll</string>
+    <string name="pick">Choose Your Level:</string>
+    <string name="goodBoy">PG</string>
+    <string name="badBoy">Bad Boy</string>
     <string name="roll_dice">Roll</string>
     <string name="sides">How Many Sides?</string>
     <string name="taskSt">Your Task . . .</string>
@@ -8,7 +11,7 @@
     <string name="rulesTitle">Rules:</string>
     <string name = "rulesText">
         Each person takes turns rolling. \n \n
-        The given number is the number of minutes to complete the programming task \n \n
+        The given number is the number of minutes to complete the task \n \n
         If you cannot complete the task, you are out! \n \n
         Last person standing wins
     </string>

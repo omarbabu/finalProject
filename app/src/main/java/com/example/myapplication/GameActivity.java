@@ -29,6 +29,8 @@ public class GameActivity extends AppCompatActivity {
     private TextView mTextField;
     private Button rules;
     private Button playAgain;
+    private Button completed;
+    private boolean done = false;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +38,8 @@ public class GameActivity extends AppCompatActivity {
 
         FirebaseStorage storage = FirebaseStorage.getInstance();
         mStorageRef = FirebaseStorage.getInstance().getReference();
-
+        completed = findViewById(R.id.button);
+        completed.setVisibility(View.VISIBLE);
         playAgain = findViewById(R.id.reTry);
         playAgain.setVisibility(View.GONE);
         rules = findViewById(R.id.rules);
@@ -47,17 +50,37 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
+
+
+
         TextView task = findViewById(R.id.task);
-        String taskString = "";
+        String taskString = getIntent().getStringExtra("taskName");
+        task.setText(taskString);
+        task.setVisibility(View.VISIBLE);
+        if (getIntent().getStringExtra("taskName").equals("")) {
+            task.setText("ERROR");
+        }
+       // task.setText(getIntent().getStringExtra("taskName"));
         mTextField = findViewById(R.id.timer);
 
-        task.setText(taskString);
+       // task.setText(taskString);
         int seconds = 60 * getIntent().getIntExtra("taskNumber", 1);
 
+        completed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), MainActivity.class);
+                String game = getIntent().getStringExtra("gameType");
+                intent.putExtra("gameType", game);
+                startActivity(intent);
+                //finish();
+            }
+        });
         new CountDownTimer(seconds * 1000, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 mTextField.setText("Seconds Remaining: \n" + millisUntilFinished / 1000);
+
             }
 
             public void onFinish() {
@@ -68,7 +91,10 @@ public class GameActivity extends AppCompatActivity {
                 playAgain.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(v.getContext(), MainActivity.class));
+                        Intent intent = new Intent(v.getContext(), MainActivity.class);
+                        String game = getIntent().getStringExtra("gameType");
+                        intent.putExtra("gameType", game);
+                        startActivity(intent);
                     }
                 });
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

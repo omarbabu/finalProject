@@ -2,18 +2,20 @@
     <string name="app_name">Roll</string>
     <string name="pick">Choose Your Level:</string>
     <string name="goodBoy">PG</string>
-    <string name="badBoy">Bad Boy</string>
+    <string name="badBoy">Bad Biddies Only</string>
     <string name="roll_dice">Roll</string>
     <string name="sides">How Many Sides?</string>
     <string name="taskSt">Your Task . . .</string>
     <string name="ruleButton">Rules</string>
     <string name="reroll">Re-Roll</string>
     <string name="rulesTitle">Rules:</string>
+    <string name="completed">Completed!</string>
     <string name = "rulesText">
-        Each person takes turns rolling. \n \n
-        The given number is the number of minutes to complete the task \n \n
-        If you cannot complete the task, you are out! \n \n
-        Last person standing wins
+        4 People to Play \n \n
+        YOU MUST COMPLETE THE GIVEN TASK OR YOU ARE ELIMINATED \n \n
+        The time limit is based on the task \n \n
+        Geoff looks down on you if you fail \n \n
+        Don’t be afraid, step outside your comfort zone
     </string>
 
     <string name="close">Close</string>

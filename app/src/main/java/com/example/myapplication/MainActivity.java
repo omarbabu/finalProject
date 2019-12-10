@@ -20,6 +20,11 @@ import java.util.Random;
         private String display = "";
         private String taskString = "";
         private View background;
+        private String gameType;
+        private final String[] pg = new String[10];
+        private final String[] bad = new String[10];
+        private static int last = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -30,22 +35,31 @@ import java.util.Random;
         final TextView result = findViewById(R.id.result);
         final SeekBar skBar = findViewById(R.id.seekBar);
         final Button reroll = findViewById(R.id.reRoll);
-        result.setText("Roll to Start!");
+        gameType = getIntent().getStringExtra("gameType");
+        if (gameType.equals("goodBoy")) {
+            result.setTextSize(84);
+            result.setText("PG Version: \n Roll to Start!");
+        } else {
+            result.setTextSize(84);
+            result.setText("Bad Biddie Version: \n Roll to Start!");
+
+        }
+
         reroll.setVisibility(View.GONE);
         background = findViewById(R.id.mainBack);
         roll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Random random = new Random();
-                rando = random.nextInt(skBar.getProgress());
+                rando = random.nextInt(10);
                 if (rando == 0) {
                     rando++;
                 }
                 display = rando + "";
+                result.setTextSize(144);
                 result.setText(display);
                 display = "Click here for task";
                 roll.setText(display);
-
                 reroll.setVisibility(View.VISIBLE);
 
 
@@ -56,6 +70,7 @@ import java.util.Random;
                         intent.putExtra("taskNumber", rando);
                         writeTask();
                         intent.putExtra("taskName", taskString);
+                        intent.putExtra("gameType", gameType);
 
                         // change the background
                         background.setBackgroundResource(R.drawable.bgorange);
@@ -76,6 +91,7 @@ import java.util.Random;
                         }, 850);
 
                         startActivity(intent);
+                        //finish();
 
                     }
                 });
@@ -84,14 +100,13 @@ import java.util.Random;
                     @Override
                     public void onClick(View view) {
                         Random random = new Random();
-                        rando = random.nextInt(skBar.getProgress());
+                        rando = random.nextInt(10);
                         if (rando == 0) {
                             rando++;
                         }
                         display = rando + "";
                         result.setText(display);
                         display = "Click here for task";
-
                     }
                 });
 
@@ -103,6 +118,35 @@ import java.util.Random;
     }
 
     private void writeTask() {
+        pg[0] = "Name one of your hobbies";
+        pg[1] = "Play duck, duck, goose for one round";
+        pg[2] = "10 Jumping jacks";
+        pg[3] = "Hold your breath for 20 seconds";
+        pg[4] = "Hug the person to your left";
+        pg[5] = "Make up your own handshake with the person to your left";
+        pg[6] = "Have a staring contest with the person in front of you";
+        pg[7] = "Run to the nearest room and bring back something and tell a story about it.";
+        pg[8] = "Draw something and have the rest try to guess what it is";
+        pg[9] = "The person in front of you decides your task!";
+
+
+        bad[0] = "Remove one piece of clothing";
+        bad[1] = "Kiss the person of your choice (you choose where)";
+        bad[2] = "Use a pick up line on the person to your left";
+        bad[3] = "Let the person to your right go through your photos";
+        bad[4] = "Person to your left decides your task";
+        bad[5] = "Answer ONE question the person to your right asks";
+        bad[6] = "Tell an embarrassing story";
+        bad[7] = "Call your ex and ask her/him out on a date (if no ex, call crush)";
+        bad[8] = "Who would you bang, marry, kill from 3 other players of your choice.";
+        bad[9] = "Give the person in front of you a lap dance.";
+
+        if (gameType.equals("goodBoy")) {
+            taskString = pg[rando - 1];
+
+        } else {
+            taskString = bad[rando - 1];
+        }
 
     }
 }

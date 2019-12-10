@@ -16,13 +16,19 @@ public class StartActivity extends AppCompatActivity {
         badBoy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), MainActivity.class));
+                Intent intent = new Intent(v.getContext(), MainActivity.class);
+                intent.putExtra("gameType", "badBoy");
+                startActivity(intent);
+                //finish();
             }
         });
         goodBoy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), MainActivity.class));
+                Intent intent = new Intent(v.getContext(), MainActivity.class);
+                intent.putExtra("gameType", "goodBoy");
+                startActivity(intent);
+                //finish();
             }
         });
     }

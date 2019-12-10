@@ -8,6 +8,10 @@
     <color name="text">#3a3535</color>
     <color name="other">#232020</color>
     <color name="button">#ff7315</color>
+    <color name="white">#ffffff</color>
+    <color name="timer">#c2caf5</color>
+
+
 
 
 </resources>

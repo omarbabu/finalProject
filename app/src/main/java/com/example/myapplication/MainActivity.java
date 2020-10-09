@@ -122,7 +122,7 @@ import java.util.Random;
         pg[1] = "Play duck, duck, goose for one round";
         pg[2] = "10 Jumping jacks";
         pg[3] = "Hold your breath for 20 seconds";
-        pg[4] = "Hug the person to your left";
+        pg[4] = "10 push ups";
         pg[5] = "Make up your own handshake with the person to your left";
         pg[6] = "Have a staring contest with the person in front of you";
         pg[7] = "Run to the nearest room and bring back something and tell a story about it.";
@@ -130,16 +130,16 @@ import java.util.Random;
         pg[9] = "The person in front of you decides your task!";
 
 
-        bad[0] = "Remove one piece of clothing";
-        bad[1] = "Kiss the person of your choice (you choose where)";
-        bad[2] = "Use a pick up line on the person to your left";
+        bad[0] = "Crack one person's wifi password";
+        bad[1] = "Lamest magic trick out of everyone does 25 push ups";
+        bad[2] = "Draw 'psi' and 'phi', if you don't know, 10 push ups";
         bad[3] = "Let the person to your right go through your photos";
         bad[4] = "Person to your left decides your task";
         bad[5] = "Answer ONE question the person to your right asks";
         bad[6] = "Tell an embarrassing story";
-        bad[7] = "Call your ex and ask her/him out on a date (if no ex, call crush)";
-        bad[8] = "Who would you bang, marry, kill from 3 other players of your choice.";
-        bad[9] = "Give the person in front of you a lap dance.";
+        bad[7] = "Let the person across from you send a random text from your phone";
+        bad[8] = "... +1 point if you let another player get +2 points";
+        bad[9] = "... -1 point, everyone else gets +1 point";
 
         if (gameType.equals("goodBoy")) {
             taskString = pg[rando - 1];
